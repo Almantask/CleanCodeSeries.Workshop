@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading;
 
 namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting
 {
@@ -24,7 +20,9 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting
 
         public static void Test()
         {
-            // var a = Add(5, 7);
+            // Test simulates calculation time so that it doesn't happen instantly
+            Thread.Sleep(5);
+            var a = Add(5, 7);
         }
     }
 }

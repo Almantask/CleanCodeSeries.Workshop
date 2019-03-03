@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting
+﻿namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting
 {
     class Zombie
     {
@@ -17,11 +10,11 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting
         public void Seek(Brains brains)
         {
             // doesn't work
-            //while (!Equals(_location, brains.Location))
+            //while (!Equals(_location, brains.LocationCurrent))
             //{
             //    Thread.Sleep(1);
             //}
-            // Location
+            // LocationCurrent
             var l = brains.Location;
             Move(l);
         }

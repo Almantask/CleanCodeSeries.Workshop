@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting
+﻿namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting
 {
-    struct Vector3
+    public struct Vector3
     {
         // Horizontal
         public float X { get; }

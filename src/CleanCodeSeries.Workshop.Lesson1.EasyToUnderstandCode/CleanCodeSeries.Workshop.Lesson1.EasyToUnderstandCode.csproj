@@ -44,13 +44,7 @@
     <Compile Include="BadCodeStructure\Mess.cs" />
     <Compile Include="BadCodeStructure\ChaoticSimulation.cs" />
     <Compile Include="BadNaming\Car.cs" />
-    <Compile Include="BadNaming\Header.cs" />
-    <Compile Include="BadNaming\Item.cs" />
-    <Compile Include="BadNaming\Iterator.cs" />
-    <Compile Include="BadNaming\Order.cs" />
     <Compile Include="BadNaming\Stud.cs" />
-    <Compile Include="BoundaryConditions\Navigator.cs" />
-    <Compile Include="NoEncapsulation\PaperPlane.cs" />
     <Compile Include="PoorCommenting\Brains.cs" />
     <Compile Include="PoorCommenting\Calculator.cs" />
     <Compile Include="PoorCommenting\Vector3.cs" />

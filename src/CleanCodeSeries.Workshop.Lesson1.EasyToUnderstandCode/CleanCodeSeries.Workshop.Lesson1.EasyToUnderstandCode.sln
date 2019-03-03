@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode", "CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.csproj", "{B4D3C35F-9B98-4558-985B-4912DFD529EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodeSeries.Workshop.Lesson3.EasyOOP", "..\CleanCodeSeries.Workshop.Lesson3.EasyOOP\CleanCodeSeries.Workshop.Lesson3.EasyOOP.csproj", "{F53CD525-99DB-49D4-88EF-F5F4351BD279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodeSeries.Workshop.Lesson2.Functions", "..\CleanCodeSeries.Workshop.Lesson2.Functions\CleanCodeSeries.Workshop.Lesson2.Functions.csproj", "{F6A26DD8-CB60-43E2-9977-FB63511EE480}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B4D3C35F-9B98-4558-985B-4912DFD529EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4D3C35F-9B98-4558-985B-4912DFD529EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4D3C35F-9B98-4558-985B-4912DFD529EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F53CD525-99DB-49D4-88EF-F5F4351BD279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53CD525-99DB-49D4-88EF-F5F4351BD279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53CD525-99DB-49D4-88EF-F5F4351BD279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53CD525-99DB-49D4-88EF-F5F4351BD279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6A26DD8-CB60-43E2-9977-FB63511EE480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A26DD8-CB60-43E2-9977-FB63511EE480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A26DD8-CB60-43E2-9977-FB63511EE480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A26DD8-CB60-43E2-9977-FB63511EE480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -44,6 +44,8 @@
     <Compile Include="BadCodeStructure\Mess.cs" />
     <Compile Include="BadCodeStructure\ChaoticSimulation.cs" />
     <Compile Include="BadNaming\Car.cs" />
+    <Compile Include="BadNaming\CarCache.cs" />
+    <Compile Include="BadNaming\CarFactory.cs" />
     <Compile Include="BadNaming\Stud.cs" />
     <Compile Include="PoorCommenting\Brains.cs" />
     <Compile Include="PoorCommenting\Calculator.cs" />

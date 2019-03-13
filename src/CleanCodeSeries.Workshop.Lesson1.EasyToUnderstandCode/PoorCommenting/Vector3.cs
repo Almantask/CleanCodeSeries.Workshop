@@ -1,17 +1,14 @@
 ﻿namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting
 {
-    public struct Vector3
+    public struct Vector3D
     {
-        // Horizontal
-        public float X { get; }
-        // Vertical
+        private float _x;
         public float Y { get; }
-        // Depth
         public float Z { get; }
 
-        public Vector3(float x, float y, float z)
+        public Vector3D(float x, float y, float z)
         {
-            X = x;
+            _x = x;
             Y = y;
             Z = z;
         }

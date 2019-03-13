@@ -7,26 +7,28 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.BadCodeStructure
     {
         public void Simulate()
         {
-            var mess =   new Mess();
-
+            var mess = new Mess();
+            
             var zombie1 = new Zombie();
-
-            var brains1 = new Brains();
-
             var zombie2 = new Zombie();
+            var zombies = new[] { zombie1, zombie2 };
 
-            var brains2 = new Brains();
-
-            var bainss =  new[] { brains1, brains2};
-
-            var zombies = new[] { zombie1, zombie2};
-
+            var brains1 = new Head();
+            var brains2 = new Head();
+            var brains = new[] { brains1, brains2 };
+            
             mess.Execute();
 
+            // What is 2 for?
             for (int index = 0; index < 2; index++)
             {
-                zombies[index].Seek(bainss[index]);
+                ZombieSeekForBrains(zombies[index], brains[index]);
             }
+        }
+
+        private void ZombieSeekForBrains(Zombie zombie, Head head)
+        {
+            zombie.Seek(head);
         }
 
         public void RunSimulation()

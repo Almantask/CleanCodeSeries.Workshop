@@ -8,7 +8,7 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.BadNaming
         public string Id { get; }
         public DateTime Bday { get; }
 
-        public int Age => (int)(Math.Ceiling((DateTime.Now - Bday).TotalDays)) / 365;
+        public int Age => CalculateAge(Bday);
 
         public Stud(string n, string i, DateTime b)
         {
@@ -17,8 +17,13 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.BadNaming
             Bday = b;
         }
 
-        // Studying.
-        void DoAction()
+        private int CalculateAge(DateTime bday)
+        {
+            var ageInDays = (DateTime.Now - bday).TotalDays;
+            return (int)(Math.Ceiling(ageInDays)) / 365;
+        }
+
+        void Study()
         {
             Console.WriteLine("Studying");
         }

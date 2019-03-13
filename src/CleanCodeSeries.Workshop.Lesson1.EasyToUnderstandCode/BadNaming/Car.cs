@@ -5,28 +5,23 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.BadNaming
 {
     public class Car
     {
-        //Speed
-        public float S { get; }
-        // Fuel tank capacity
-        public float FuelFloat { get; }
-        // Type of fuel
-        public string FuelString{ get; }
-        // Litres per km
-        public float LKM { get; }
-        private Vector3 _position;
+        public float Speed { get; }
+        public float FuelTankCapacity { get; }
+        public string FuelType{ get; }
+        public float LitresPerKm { get; }
+        public Vector3D Position { get; }
 
-        public Car(float s, float fuel, string type, float lKM, Vector3 position)
+        public Car(float speed, float fuelTankCapacity, string fuelType, 
+            float litresPerKm, Vector3D position)
         {
-            S = s;
-            FuelFloat = fuel;
-            FuelString = type;
-            LKM = lKM;
-            _position = position;
+            Speed = speed;
+            FuelTankCapacity = fuelTankCapacity;
+            FuelType = fuelType;
+            LitresPerKm = litresPerKm;
+            Position = position;
         }
-
-        public Vector3 Position => _position;
-
-        public void Drive(Vector3 to)
+                
+        public void Drive(Vector3D to)
         {
             Console.WriteLine($"Driving {to}");
         }

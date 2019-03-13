@@ -2,26 +2,18 @@
 {
     class Zombie
     {
-        // Head
-        private Brains _brains;
+        private Head _head;
 
-        private Vector3 _location;
-        // Here it seeks for brains, not head!!!
-        public void Seek(Brains brains)
+        private Vector3D _location;
+
+        public void Seek(Head head)
         {
-            // doesn't work
-            //while (!Equals(_location, brains.LocationCurrent))
-            //{
-            //    Thread.Sleep(1);
-            //}
-            // LocationCurrent
-            var l = brains.Location;
-            Move(l);
+            Move(head.Location);
         }
 
-        // Goes to location
-        public void Move(Vector3 locationTo)
+        public void Move(Vector3D locationTo)
         {
+            //TODO: 
             // moving to location
         }
     }

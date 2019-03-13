@@ -10,9 +10,9 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.BadNaming
 {
     public class CarFactory
     {
-        public Car SetCar()
+        public Car Create()
         {
-            return new Car(100, 50, "F", 5, new Vector3(0, 0, 0));
+            return new Car(100, 50, "F", 5, new Vector3D(0, 0, 0));
         }
 
 

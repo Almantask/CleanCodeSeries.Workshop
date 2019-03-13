@@ -2,40 +2,37 @@
 {
     class Mess
     {
-            public void MessUp3Mini()
-            {
-
-            }
-
         public void Execute()
         {
-            // It has to execute in the following order: 2, 1, 3
             MessUp2();
-                MessUp1();
+            MessUp1();
             MessUp3();
         }
 
+        private void MessUp2()
+        {
+            MessUp2Mini();
+        }
 
         public void MessUp2Mini()
         {
 
         }
 
-        private void MessUp3()
-        {
-
-            }
-
         private void MessUp1()
-            {
+        {
 
         }
 
-                private void MessUp2()
-                {
+        private void MessUp3()
+        {
+            MessUp3Mini();
+        }
 
-                }
+        public void MessUp3Mini()
+        {
 
-       // Ignored 
+        }
+        
     }
 }

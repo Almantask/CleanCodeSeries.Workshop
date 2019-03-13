@@ -4,13 +4,13 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.Sample
 {
     public class FinancialEntry
     {
-        public FEHeader Header;
-        public IEnumerable<FELine> Lines;
+        public FinancialHeader Header;
+        public List<FinancialEntryLine> Lines;
 
-        public FinancialEntry(FEHeader header)
+        public FinancialEntry(FinancialHeader header)
         {
             Header = header;
-            Lines = new List<FELine>();
+            Lines = new List<FinancialEntryLine>();
         }
 
         

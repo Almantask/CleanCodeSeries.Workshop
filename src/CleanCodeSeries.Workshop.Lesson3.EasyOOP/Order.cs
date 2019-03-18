@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting;
 
 namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP
 {

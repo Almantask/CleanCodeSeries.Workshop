@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,14 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BankAccount.cs" />
-    <Compile Include="BigBadUglyFunction.cs" />
-    <Compile Include="BigFunction.cs" />
-    <Compile Include="AirportCheckoutPoint.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="CodingStory.cs" />
-    <Compile Include="Programmer.cs" />
+    <Compile Include="GiftPicker\Gift.cs" />
+    <Compile Include="GiftPicker\GiftRandomiser.cs" />
+    <Compile Include="QuotationImport\DBContext.cs" />
+    <Compile Include="QuotationImport\Logger.cs" />
+    <Compile Include="QuotationImport\Quotation.cs" />
+    <Compile Include="QuotationImport\QuotationHeader.cs" />
+    <Compile Include="QuotationImport\QuotationImport.cs" />
+    <Compile Include="QuotationImport\QuotationImportWindow.cs" />
+    <Compile Include="QuotationImport\QuotationLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.csproj">
+      <Project>{b4d3c35f-9b98-4558-985b-4912dfd529ea}</Project>
+      <Name>CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

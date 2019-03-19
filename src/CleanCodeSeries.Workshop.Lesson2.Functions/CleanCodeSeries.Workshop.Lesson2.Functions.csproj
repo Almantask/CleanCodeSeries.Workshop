@@ -42,9 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Demo.cs" />
+    <Compile Include="GiftPicker\Gender.cs" />
     <Compile Include="GiftPicker\Gift.cs" />
     <Compile Include="GiftPicker\GiftRandomiser.cs" />
+    <Compile Include="GiftPicker\Person.cs" />
     <Compile Include="QuotationImport\DBContext.cs" />
     <Compile Include="QuotationImport\Logger.cs" />
     <Compile Include="QuotationImport\Quotation.cs" />

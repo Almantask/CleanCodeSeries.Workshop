@@ -18,8 +18,8 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
 
         public void ButtonImportQuotation_OnClick(object sender, EventArgs e)
         {
-            var importer = new QuotationImporter(new DBContext());
             Logger.Log("Import started");
+            var importer = new QuotationImporter(new DBContext());
             importer.context.StartTransaction();
             try
             {
@@ -29,7 +29,7 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
                 importer.CreateLines(quotation);
                 importer.context.CommitTransaction();
             }
-            catch(Exception e)
+            catch
             {
                 importer.context.Rollback();
             }
@@ -52,7 +52,7 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
                     importer.UpdateLines(quotation);
                     importer.context.CommitTransaction();
                 }
-                catch (Exception e)
+                catch
                 {
                     importer.context.Rollback();
                 }

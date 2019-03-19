@@ -16,6 +16,12 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
             this.context = context;
         }
 
+        public bool ReadHeader(Quotation quotation)
+        {
+            var table = context.RunSelect($"select id from Quotation where OrderNumber = {quotation.Header.OrderCode}");
+            return table.Rows.Count > 0;
+        }
+
         public void ValidateHeader(Quotation quotation)
         {
             if (!context.Validate(quotation.Header))
@@ -48,7 +54,18 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
             context.Create(quotation.Header);
         }
 
+        public void UpdateLines(Quotation quotation)
+        {
+            foreach (var line in quotation.Lines)
+            {
+                context.Update(line);
+            }
+        }
 
+        public void UpdateHeader(Quotation quotation)
+        {
+            context.Update(quotation.Header);
+        }
 
     }
 }

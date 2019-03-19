@@ -1,4 +1,7 @@
-﻿namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
+﻿using System;
+using System.Data;
+
+namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
 {
     public class DBContext
     {
@@ -13,5 +16,20 @@
         public void CommitTransaction() { }
 
         public void Rollback() { }
+
+        internal DataTable RunSelect(string query)
+        {
+            return new DataTable();
+        }
+
+        internal void Update(QuotationLine line)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Update(QuotationHeader header)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

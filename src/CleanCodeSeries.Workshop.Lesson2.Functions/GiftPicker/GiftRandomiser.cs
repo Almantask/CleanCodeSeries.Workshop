@@ -13,20 +13,20 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.Big
         // There are multiple criterias based ona which a gif will need to be picked.
         public static Gift PickGift(string name, string gender, int age, string eyeColor, IEnumerable<Gift> giftsPool)
         {
-            int[] sizePool = new int[0];
+            float[] sizePool = new float[0];
             string[] colorPool = new string[0];
             if (gender == "male")
             {
                 if (age < 2)
                 {
-                    sizePool = new []{1, 2, 3};
+                    sizePool = new []{ 1.0f, 2.0f, 3.0f };
                     colorPool = new []{"white", "green", "black"};
                 }
                 else if (age < 12)
                 {
                     if (age < 2)
                     {
-                        sizePool = new[] { 3, 4, 5, 6 };
+                        sizePool = new[] { 3.0f, 4.0f, 5.0f, 6.0f };
                         colorPool = new[] { "black", "white", "orange" };
                     }
                 }
@@ -36,12 +36,12 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.Big
             {
                 if (age < 2)
                 {
-                    sizePool = new[] { 1, 2, 3 };
+                    sizePool = new[] { 1.0f, 2.0f, 3.0f };
                     colorPool = new[] { "purple", "pink" };
                 }
                 else if (age < 12)
                 {
-                    sizePool = new[] { 3, 4, 5, 6 };
+                    sizePool = new [] { 3.0f, 4.0f, 5.0f, 6.0f };
                     colorPool = new[] { "purple", "red", "gold" };
                 }
             }
@@ -50,14 +50,13 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.Big
                 return null;
             }
 
-            var i1 = _randomiser.Next(0, sizePool.Length - 1);
-            var size = sizePool[i1];
-            var i2 = _randomiser.Next(0, colorPool.Length - 1);
-            var color = colorPool[i2];
-            
-            var gift = new Gift(color, size);
+            var giftsFiltered = giftsPool
+                .Where(g => sizePool.Contains(g.Size))
+                .Where(g => colorPool.Contains(g.Color))
+                .OrderBy(g => new Guid())
+                .ToList();
 
-            return gift;
+            return giftsFiltered[0];
         }
     }
 }

@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanCodeSeries.Workshop.Lesson2.Functions.StaticHelpers
 {
-    public static class CollectionHelper
+    public static class CollectionsExtensions
     {
-        public static string Print(IEnumerable<object> collection)
+        public static string Print<T>(this IEnumerable<T> collection)
         {
             var sb = new StringBuilder();
 
@@ -24,7 +22,7 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.StaticHelpers
             return sb.ToString();
         }
 
-        public static string Print(IEnumerable collection)
+        public static string Print(this IEnumerable collection)
         {
             var genericCollection = collection.Cast<object>();
             return Print(genericCollection);

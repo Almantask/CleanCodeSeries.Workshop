@@ -16,10 +16,10 @@ namespace WorkshopPresentation
             var list = new List<object>() { 1, 2, "a", new DataTable() };
             Array array = new object[] { 1, 2, "a", new DataTable() };
 
-            
 
-            var message1 = CollectionHelper.Print(list);
-            var message2 = CollectionHelper.Print(array);
+
+            var message1 = list.Print();
+            var message2 = array.Print();
 
             Console.WriteLine(message1);
             Console.WriteLine(message2);

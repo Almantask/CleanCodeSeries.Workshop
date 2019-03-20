@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting;
+﻿using CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.PoorCommenting;
 
 namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.BadNaming
 {

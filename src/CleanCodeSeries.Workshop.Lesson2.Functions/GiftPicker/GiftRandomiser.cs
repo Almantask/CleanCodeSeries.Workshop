@@ -1,58 +1,100 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CleanCodeSeries.Workshop.Lesson2.Functions.GiftPicker
 {
-    public static class GiftRandomiser
+    public class GiftRandomiser
     {
-        private static Random _randomiser;
+        private const int ToddlerAgeLimit = 2;
+        private const int KidAgeLimit = 12;
 
-        // There are multiple criterias based ona which a gif will need to be picked.
-        public static Gift PickGift(string name, string gender, int age, string eyeColor, IEnumerable<Gift> giftsPool)
+        private Random _randomiser;
+        private IEnumerable<float> _sizePool;
+        private IEnumerable<string> _colorPool;
+
+        public GiftRandomiser()
         {
-            int[] sizePool = new int[0];
-            string[] colorPool = new string[0];
-            if (gender == "male")
+            _randomiser = new Random();
+        }
+
+        public Gift PickGift(Person person, IEnumerable<Gift> giftsPool)
+        {
+            _sizePool = PickSizePool(person.Age);
+            _colorPool = PickColorPool(person.Age, person.Gender);
+            var gift = PickARandomGift(giftsPool);
+
+            return gift;
+        }
+
+        private IEnumerable<float> PickSizePool(int age)
+        {
+            IEnumerable<float> sizePool = null;
+
+            if (age < ToddlerAgeLimit)
             {
-                if (age < 2)
+                sizePool = new[] { 1.0f, 2.0f, 3.0f };
+            }
+            else if (age < KidAgeLimit)
+            {
+                sizePool = new[] { 3.0f, 4.0f, 5.0f, 6.0f };
+            }
+
+            return sizePool;
+        }
+
+        private IEnumerable<string> PickColorPool(int age, Gender gender)
+        {
+            IEnumerable<string> colorPool = null;
+
+            if (gender == Gender.Male)
+            {
+                if (age < ToddlerAgeLimit)
                 {
-                    sizePool = new []{1, 2, 3};
-                    colorPool = new []{"white", "green", "black"};
+                    colorPool = new[] { "white", "green", "black" };
                 }
-                else if (age < 12)
+                else if (age < KidAgeLimit)
                 {
-                    if (age < 2)
-                    {
-                        sizePool = new[] { 3, 4, 5, 6 };
-                        colorPool = new[] { "black", "white", "orange" };
-                    }
+                    colorPool = new[] { "black", "white", "orange" };
                 }
 
             }
-            else if (gender == "female")
+            else if (gender == Gender.Female)
             {
-                if (age < 2)
+                if (age < ToddlerAgeLimit)
                 {
-                    sizePool = new[] { 1, 2, 3 };
                     colorPool = new[] { "purple", "pink" };
                 }
-                else if (age < 12)
+                else if (age < KidAgeLimit)
                 {
-                    sizePool = new[] { 3, 4, 5, 6 };
                     colorPool = new[] { "purple", "red", "gold" };
                 }
             }
-            else
-            {
-                return null;
-            }
 
-            var i1 = _randomiser.Next(0, sizePool.Length - 1);
-            var size = sizePool[i1];
-            var i2 = _randomiser.Next(0, colorPool.Length - 1);
-            var color = colorPool[i2];
-            
-            var gift = new Gift(color, size);
+            return colorPool;
+        }
+
+        private Gift PickARandomGift(IEnumerable<Gift> giftsPool)
+        {
+            var giftsFiltered = FilterGifts(giftsPool);
+            var gift = PickRandom(giftsFiltered);
+
+            return gift;
+        }
+
+        private IEnumerable<Gift> FilterGifts(IEnumerable<Gift> giftsPool)
+        {
+            var giftsFiltered = giftsPool
+                .Where(g => _sizePool.Contains(g.Size))
+                .Where(g => _colorPool.Contains(g.Color));
+
+            return giftsFiltered;
+        }
+
+        private Gift PickRandom(IEnumerable<Gift> gifts)
+        {
+            var index = _randomiser.Next(gifts.Count());
+            var gift = gifts.ToList()[index];
 
             return gift;
         }

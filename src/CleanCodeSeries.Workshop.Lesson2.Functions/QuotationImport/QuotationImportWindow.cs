@@ -1,4 +1,5 @@
 ﻿using System;
+using CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers;
 
 namespace CleanCodeSeries.Workshop.Lesson2.Functions.QuotationImport
 {
@@ -13,22 +14,30 @@ namespace CleanCodeSeries.Workshop.Lesson2.Functions.QuotationImport
 
         public void ButtonImportQuotation_OnClick(object sender, EventArgs e)
         {
-            var importer = new QuotationImporter(new DBContext());
+            ImportQuotation();
+        } 
+
+        public void ButtonUpdateQuotation_OnClick(object sender, EventArgs e)
+        {
+            UpdateQuotation();
+        }
+
+        private void ImportQuotation()
+        {
             Logger.Log("Import started");
-            importer.context.StartTransaction();
-            try
-            {
-                importer.ValidateHeader(quotation);
-                importer.ValidateLines(quotation);
-                importer.CreateHeader(quotation);
-                importer.CreateLines(quotation);
-                importer.context.CommitTransaction();
-            }
-            catch(Exception e)
-            {
-                importer.context.Rollback();
-            }
+            var importer = new QuotationImporter(new DBContext(), quotation);
+            importer.ImportQuotation();
             Logger.Log("Import done");
         }
+
+        private void UpdateQuotation()
+        {
+            Logger.Log("Import started");
+            var importer = new QuotationImporter(new DBContext(), quotation);
+            importer.UpdateQuotation();
+            Logger.Log("Import done");
+        }
+
+
     }
 }

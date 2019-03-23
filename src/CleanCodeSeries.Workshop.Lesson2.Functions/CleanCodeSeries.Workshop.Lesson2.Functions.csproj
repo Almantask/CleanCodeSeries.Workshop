@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Demo.cs" />
     <Compile Include="GiftPicker\Gift.cs" />
     <Compile Include="GiftPicker\GiftRandomiser.cs" />
+    <Compile Include="GiftPicker\Person.cs" />
     <Compile Include="QuotationImport\DBContext.cs" />
     <Compile Include="QuotationImport\Logger.cs" />
     <Compile Include="QuotationImport\Quotation.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="QuotationImport\QuotationImportWindow.cs" />
     <Compile Include="QuotationImport\QuotationLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticHelpers\CollectionHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.csproj">

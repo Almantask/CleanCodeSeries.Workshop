@@ -1,49 +1,106 @@
 ﻿using System;
+using CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers;
 
 namespace CleanCodeSeries.Workshop.Lesson2.Functions.QuotationImport
 {
     public class QuotationImporter
     {
-        public DBContext context;
+        private DBContext _context;
+        private Quotation _quotation;
 
-        public QuotationImporter(DBContext context)
+        public QuotationImporter(DBContext context, Quotation quotation)
         {
-            this.context = context;
+            _context = context;
+            _quotation = quotation;
         }
 
-        public void ValidateHeader(Quotation quotation)
+        public void ImportQuotation()
         {
-            if (!context.Validate(quotation.Header))
+            _context.StartTransaction();
+            try
             {
-                throw new Exception($"Invalid header {quotation.Header.OrderCode}");
+                ValidateHeader();
+                ValidateLines();
+                CreateHeader();
+                CreateLines();
+                _context.CommitTransaction();
+            }
+            catch
+            {
+                _context.Rollback();
             }
         }
 
-        public void ValidateLines(Quotation quotation)
+        public void UpdateQuotation()
         {
-            foreach (var line in quotation.Lines)
+            if (ReadHeader())
             {
-                if (!context.Validate(line))
+                _context.StartTransaction();
+                try
+                {
+                    ValidateHeader();
+                    ValidateLines();
+                    UpdateHeader();
+                    UpdateLines();
+                    _context.CommitTransaction();
+                }
+                catch
+                {
+                    _context.Rollback();
+                }
+            }
+        }
+
+        private bool ReadHeader()
+        {
+            var table = _context.RunSelect($"select id from Quotation where OrderNumber = {_quotation.Header.OrderCode}");
+            return table.Rows.Count > 0;
+        }
+
+        private void ValidateHeader()
+        {
+            if (!_context.Validate(_quotation.Header))
+            {
+                throw new Exception($"Invalid header {_quotation.Header.OrderCode}");
+            }
+        }
+
+        private void ValidateLines()
+        {
+            foreach (var line in _quotation.Lines)
+            {
+                if (!_context.Validate(line))
                 {
                     throw new Exception($"Invalid line {line.LineNumber}");
                 }
             }
         }
 
-        public void CreateLines(Quotation quotation)
+        private void CreateLines()
         {
-            foreach (var line in quotation.Lines)
+            foreach (var line in _quotation.Lines)
             {
-                context.Create(line);
+                _context.Create(line);
             }
         }
 
-        public void CreateHeader(Quotation quotation)
+        private void CreateHeader()
         {
-            context.Create(quotation.Header);
+            _context.Create(_quotation.Header);
         }
 
+        private void UpdateLines()
+        {
+            foreach (var line in _quotation.Lines)
+            {
+                _context.Update(line);
+            }
+        }
 
+        private void UpdateHeader()
+        {
+            _context.Update(_quotation.Header);
+        }
 
     }
 }

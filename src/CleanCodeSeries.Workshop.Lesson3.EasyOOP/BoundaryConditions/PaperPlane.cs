@@ -1,4 +1,4 @@
-﻿namespace CleanCodeSeries.Workshop.Lesson2.Functions.BoundaryConditions
+﻿namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP.BoundaryConditions
 {
     class PaperPlane
     {

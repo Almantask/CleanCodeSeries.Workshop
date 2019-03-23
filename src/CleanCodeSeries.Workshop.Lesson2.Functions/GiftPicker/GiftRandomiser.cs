@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CleanCodeSeries.Workshop.Lesson2.Functions.Big
+namespace CleanCodeSeries.Workshop.Lesson2.Functions.GiftPicker
 {
     public static class GiftRandomiser
     {

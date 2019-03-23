@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CleanCodeSeries.Workshop.Lesson2.Functions.BoundaryConditions
+namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP.BoundaryConditions
 {
     // Note: ignore the use of ??
     class Navigator<T>

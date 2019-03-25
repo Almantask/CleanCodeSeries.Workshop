@@ -41,14 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoundaryConditions\Navigator.cs" />
-    <Compile Include="BoundaryConditions\PaperPlane.cs" />
-    <Compile Include="Header.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Taxi.cs" />
-    <Compile Include="TaxiService.cs" />
+    <Compile Include="War.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.csproj">

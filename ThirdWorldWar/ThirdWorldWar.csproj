@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F53CD525-99DB-49D4-88EF-F5F4351BD279}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CleanCodeSeries.Workshop.Lesson3.EasyOOP</RootNamespace>
-    <AssemblyName>CleanCodeSeries.Workshop.Lesson3.EasyOOP</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{797A7BED-E109-43F8-9C28-5171C70E30B3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ThirdWorldWar</RootNamespace>
+    <AssemblyName>ThirdWorldWar</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,13 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="War.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.csproj">
-      <Project>{b4d3c35f-9b98-4558-985b-4912dfd529ea}</Project>
-      <Name>CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode</Name>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\CleanCodeSeries.Workshop.Lesson3.EasyOOP\CleanCodeSeries.Workshop.Lesson3.EasyOOP.csproj">
+      <Project>{f53cd525-99db-49d4-88ef-f5f4351bd279}</Project>
+      <Name>CleanCodeSeries.Workshop.Lesson3.EasyOOP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

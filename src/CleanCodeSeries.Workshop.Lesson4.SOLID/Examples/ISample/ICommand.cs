@@ -148,8 +148,8 @@ namespace CleanCodeSeries.Workshop.Lesson4.SOLID.Examples.ISample
             var api2 = new Lesson4ApiMethod();
             api2.Run(new InvoiceService());
 
-            var api3 = new Lesson4Api(new MyInvoiceService());
-
+            var api3 = new Lesson4ApiProperty();
+            api3.Service = new MyInvoiceService();
             api3.Run();
         }
     }

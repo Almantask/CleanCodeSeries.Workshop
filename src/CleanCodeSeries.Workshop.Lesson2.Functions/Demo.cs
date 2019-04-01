@@ -1,11 +1,11 @@
-﻿using CleanCodeSeries.Workshop.Lesson2.Functions.Big;
-using CleanCodeSeries.Workshop.Lesson2.Functions.StaticHelpers;
+﻿using CleanCodeSeries.Workshop.Lesson2.Functions.StaticHelpers;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CleanCodeSeries.Workshop.Lesson2.Functions.GiftPicker;
 
 namespace CleanCodeSeries.Workshop.Lesson2.Functions
 {

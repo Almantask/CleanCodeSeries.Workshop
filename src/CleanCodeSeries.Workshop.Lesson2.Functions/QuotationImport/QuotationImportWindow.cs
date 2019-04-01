@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
+namespace CleanCodeSeries.Workshop.Lesson2.Functions.QuotationImport
 {
     class QuotationImportWindow
     {

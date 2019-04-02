@@ -41,7 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commander.cs" />
+    <Compile Include="ISoldier.cs" />
+    <Compile Include="Leutenant.cs" />
+    <Compile Include="MilitaryHQ.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Soldier.cs" />
     <Compile Include="War.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F53CD525-99DB-49D4-88EF-F5F4351BD279}</ProjectGuid>
+    <ProjectGuid>{ECF4D86A-B89C-4D85-8B48-C5C0391173D1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CleanCodeSeries.Workshop.Lesson3.EasyOOP</RootNamespace>
-    <AssemblyName>CleanCodeSeries.Workshop.Lesson3.EasyOOP</AssemblyName>
+    <RootNamespace>CleanCodeSeries.Workshop.Lesson4.SOLID</RootNamespace>
+    <AssemblyName>CleanCodeSeries.Workshop.Lesson4.SOLID</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,14 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Examples\Animal.cs" />
+    <Compile Include="Examples\ClassRoom.cs" />
+    <Compile Include="Examples\Day.cs" />
+    <Compile Include="Examples\ISample\ICommand.cs" />
+    <Compile Include="Examples\ISample\IInvoiceService.cs" />
+    <Compile Include="Examples\ISample\ILesson4ApiMethod.cs" />
+    <Compile Include="Examples\Lesson.cs" />
+    <Compile Include="Examples\Samples.cs" />
+    <Compile Include="Examples\School.cs" />
+    <Compile Include="Examples\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="War.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode\CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.csproj">
-      <Project>{b4d3c35f-9b98-4558-985b-4912dfd529ea}</Project>
-      <Name>CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

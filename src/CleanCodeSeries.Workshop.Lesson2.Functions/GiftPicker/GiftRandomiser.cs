@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CleanCodeSeries.Workshop.Lesson2.Functions.Big
+namespace CleanCodeSeries.Workshop.Lesson2.Functions.GiftPicker
 {
     public class GiftRandomiser
     {

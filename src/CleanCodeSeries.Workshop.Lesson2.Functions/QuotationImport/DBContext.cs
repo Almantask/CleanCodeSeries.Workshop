@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
+namespace CleanCodeSeries.Workshop.Lesson2.Functions.QuotationImport
 {
     public class DBContext
     {

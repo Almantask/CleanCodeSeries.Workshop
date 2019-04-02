@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
+namespace CleanCodeSeries.Workshop.Lesson2.Functions.QuotationImport
 {
     public class QuotationImporter
     {

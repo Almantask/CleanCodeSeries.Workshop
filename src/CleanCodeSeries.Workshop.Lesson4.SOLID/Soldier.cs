@@ -37,11 +37,11 @@ namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP
             Console.WriteLine($"{Person.Name} shooting at {target.Person.Name}");
             if (IsTargetHit())
             {
-                TakeDamage(target);
+                DealDamage(target);
             }
         }
 
-        private void TakeDamage(Soldier target)
+        private void DealDamage(Soldier target)
         {
             const float damage = 50;
             target.HP -= damage;

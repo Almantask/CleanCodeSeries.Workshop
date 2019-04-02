@@ -8,7 +8,7 @@
  */
 namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP
 {
-    internal interface ISoldier
+    public interface ISoldier
     {
 
     }

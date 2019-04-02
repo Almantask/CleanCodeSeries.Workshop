@@ -41,17 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Examples\Animal.cs" />
-    <Compile Include="Examples\ClassRoom.cs" />
-    <Compile Include="Examples\Day.cs" />
-    <Compile Include="Examples\ISample\ICommand.cs" />
-    <Compile Include="Examples\ISample\IInvoiceService.cs" />
-    <Compile Include="Examples\ISample\ILesson4ApiMethod.cs" />
-    <Compile Include="Examples\Lesson.cs" />
-    <Compile Include="Examples\Samples.cs" />
-    <Compile Include="Examples\School.cs" />
-    <Compile Include="Examples\Student.cs" />
+    <Compile Include="Commander.cs" />
+    <Compile Include="ISoldier.cs" />
+    <Compile Include="Leutenant.cs" />
+    <Compile Include="MilitaryHQ.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Soldier.cs" />
+    <Compile Include="War.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

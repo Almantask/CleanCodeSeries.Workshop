@@ -3,7 +3,7 @@
     class Zombie
     {
         // Head
-        private Brains _brains;
+        private readonly Brains _brains;
 
         private Vector3 _location;
         // Here it seeks for brains, not head!!!

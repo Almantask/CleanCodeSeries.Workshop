@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CleanCodeSeries.Workshop.Lesson4.SOLID;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,22 +11,38 @@ using System.Linq;
  * And all soldiers dismiss.
  * Else, they shoot again.
  */
-namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP
+namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 {
     public class Soldier
     {
-        public Person Person;
+        protected Person Person { get; }
         public float HP { get; set; }
         public float XP {get;set;}
+        public event EventHandler ShotsFired;
 
-        private Random _random;
+        public string Name => Person.Name;
+        public int Age => Person.Age;
+        public float Weight => Person.Weight;
+        public float Height => Person.Height;
 
-        public Soldier(Person person, float hp, float xp)
+        private int _consequitiveShots;
+
+        private IRandom _random;
+
+        public Soldier(Person person, float hp, float xp, IRandom random)
         {
             Person = person;
             HP = hp;
             XP = xp;
-            _random = new Random();
+            _random = random;
+        }
+
+        public Soldier(Soldier soldier, float hp, float xp, IRandom random)
+        {
+            Person = soldier.Person;
+            HP = hp;
+            XP = xp;
+            _random = random;
         }
 
         public void Shoot(IList<Soldier> soldiers)
@@ -34,17 +51,29 @@ namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP
             if (isDead) return;
 
             Soldier target = PickRandomTarget(soldiers);
-            Console.WriteLine($"{Person.Name} shooting at {target.Person.Name}");
-            if (IsTargetHit())
+            ShotsFired?.Invoke(this, new ShotFiredEventArgs(Name, target.Name));
+
+            var hitRoll = _random.Next(100);
+            if (IsTargetHit(hitRoll))
             {
+                _consequitiveShots++;
                 DealDamage(target);
+            }
+            else
+            {
+                _consequitiveShots = 0;
             }
         }
 
         private void DealDamage(Soldier target)
         {
             const float damage = 50;
-            target.HP -= damage;
+            var multiplier = GetDamageMultiplier();
+
+            var totalDamage = damage * multiplier;
+            Console.WriteLine($"Damage: {totalDamage}");
+            target.HP -= totalDamage;
+
             var isTargetDead = target.HP <= 0;
             if (isTargetDead)
             {
@@ -59,9 +88,21 @@ namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP
             }
         }
 
+        private int GetDamageMultiplier()
+        {
+            const int minComboShots = 1;
+            int damageMultiplier = 1;
+            if (_consequitiveShots > minComboShots)
+            {
+                damageMultiplier = 2;
+            }
+
+            return damageMultiplier;
+        }
+
         private void Die()
         {
-            Console.WriteLine($"{Person.Name}, {Person.Age} years old met his destiny");
+            Console.WriteLine($"{Name}, {Age} years old met his destiny");
         }
 
         private Soldier PickRandomTarget(IList<Soldier> soldiers)
@@ -72,12 +113,10 @@ namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP
             return target;
         }
 
-        private bool IsTargetHit()
+        private bool IsTargetHit(int hitRoll)
         {
             const float chanceToHit = 50;
-            var hit = _random.Next(100);
-
-            return hit > chanceToHit;
+            return hitRoll > chanceToHit;
         }
 
     }

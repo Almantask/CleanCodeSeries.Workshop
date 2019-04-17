@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\CleanCodeSeries.Workshop.Lesson2.Functions\CleanCodeSeries.Workshop.Lesson2.Functions.csproj" />
+    <ProjectReference Include="..\src\CleanCodeSeries.Workshop.Lesson4.SOLID\CleanCodeSeries.Workshop.Lesson4.SOLID.csproj" />
   </ItemGroup>
 
 </Project>

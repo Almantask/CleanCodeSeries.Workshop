@@ -7,7 +7,7 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.BadCodeStructure
     {
         public void Simulate()
         {
-            var mess =   new Mess();
+            var mess = new Mess();
 
             var zombie1 = new Zombie();
 
@@ -17,9 +17,9 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.BadCodeStructure
 
             var brains2 = new Brains();
 
-            var bainss =  new[] { brains1, brains2};
+            var bainss = new[] { brains1, brains2 };
 
-            var zombies = new[] { zombie1, zombie2};
+            var zombies = new[] { zombie1, zombie2 };
 
             mess.Execute();
 
@@ -48,5 +48,8 @@ namespace CleanCodeSeries.Workshop.Lesson1.EasyToUnderstandCode.BadCodeStructure
             }
 
         }
+
+
     }
+
 }

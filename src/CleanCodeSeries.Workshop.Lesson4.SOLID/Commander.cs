@@ -6,10 +6,12 @@
  * And all soldiers dismiss.
  * Else, they shoot again.
  */
-namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP
+using System;
+
+namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 {
     public class Commander:Soldier
     {
-        public Commander(Soldier soldier) : base(soldier.Person, soldier.HP, soldier.XP) { }
+        public Commander(Soldier soldier, IRandom random) : base(soldier, soldier.HP, soldier.XP, random) { }
     }
 }

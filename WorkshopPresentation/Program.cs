@@ -1,30 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using CleanCodeSeries.Workshop.Lesson2.Functions.StaticHelpers;
+﻿
+using CleanCodeSeries.Workshop.Lesson3.EasyOOP;
+using CleanCodeSeries.Workshop.Lesson4.SOLID;
+using System;
+
 namespace WorkshopPresentation
 {
     class Program
     {
         static void Main(string[] args)
         {
-            DemoCollectionPrint();
-        }
-
-        private static void DemoCollectionPrint()
-        {
-            var list = new List<object>() { 1, 2, "a", new DataTable() };
-            Array array = new object[] { 1, 2, "a", new DataTable() };
-
-            
-
-            var message1 = CollectionHelper.Print(list);
-            var message2 = CollectionHelper.Print(array);
-
-            Console.WriteLine(message1);
-            Console.WriteLine(message2);
-
-            Console.ReadLine();
+            var war = new War(new SoldierGenerator());
+            war.Simulate();
+            Console.ReadKey();
         }
     }
 }

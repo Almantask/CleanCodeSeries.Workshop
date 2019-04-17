@@ -6,7 +6,7 @@
  * And all soldiers dismiss.
  * Else, they shoot again.
  */
-namespace CleanCodeSeries.Workshop.Lesson3.EasyOOP
+namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 {
     public class Person
     {

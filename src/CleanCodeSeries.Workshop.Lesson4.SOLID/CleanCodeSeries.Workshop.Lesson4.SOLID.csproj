@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Commander.cs" />
     <Compile Include="ILogger.cs" />
+    <Compile Include="ILoggingService.cs" />
     <Compile Include="IRandom.cs" />
     <Compile Include="ISoldier.cs" />
     <Compile Include="ISoldierGenerator.cs" />

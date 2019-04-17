@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace CleanCodeSeries.Workshop.Lesson4.SOLID
 {
+    /// <summary>
+    /// SRP: Just generate soldiers
+    /// </summary>
     public class SoldierGenerator:ISoldierGenerator
     {
         public IList<Soldier> Generate()

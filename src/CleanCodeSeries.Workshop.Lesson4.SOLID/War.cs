@@ -13,6 +13,9 @@ using System.Linq;
  */
 namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 {
+    /// <summary>
+    /// SRP: Simulate war (fight)
+    /// </summary>
     public class War
     {
         public IList<Soldier> Reserve = new List<Soldier>();

@@ -8,6 +8,9 @@
  */
 namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 {
+    /// <summary>
+    /// Person is just a POCO (no CLR dependencies)
+    /// </summary>
     public class Person
     {
         public string Name { get; }

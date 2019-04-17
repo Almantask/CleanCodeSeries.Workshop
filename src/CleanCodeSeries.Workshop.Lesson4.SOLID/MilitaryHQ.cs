@@ -10,18 +10,27 @@ using System;
 
 namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 {
+    /// <summary>
+    /// MilitaryHQ is just promoting soldiers.
+    /// </summary>
     public class MilitaryHQ
     {
         private float XPForLeutenant = 100;
         private float XPForCommander = 1000;
+        // Commander and leutenant make their choices differently. Thus they have
+        // a different way of taking random choices.
         private IRandom _randomiserLeutenant;
         private IRandom _randomiserCommande;
+
         public MilitaryHQ(IRandom randomiserLeutenant, IRandom randomiserCommander)
         {
             _randomiserLeutenant = randomiserLeutenant;
             _randomiserCommande = randomiserCommander;
         }
 
+        /// <summary>
+        /// Promotes soldier to leutenant, leutenant to commander.
+        /// </summary>
         public Soldier Promote(Soldier soldier)
         {
             if (soldier.XP >= XPForCommander && soldier is Leutenant)

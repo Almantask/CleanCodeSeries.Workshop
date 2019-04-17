@@ -13,13 +13,29 @@ using System.Linq;
  */
 namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 {
+    /// <summary>
+    /// Soldier violates SRP still. It has more reasons to change than it should:
+    /// Soldier fights (shoots). If randomisation or combat changes, soldier class will need to change.
+    /// Twe two should be separate components.
+    /// </summary>
     public class Soldier
     {
+        /// <summary>
+        /// Person is not a parent, because we might have a robo soldier or mutant soldier, etc. 
+        /// Also because it's preferable to have fewer chains of dependencies and inheritance creates such chain.
+        /// </summary>
         protected Person Person { get; }
         public float HP { get; set; }
         public float XP {get;set;}
+        /// <summary>
+        /// We decoupled logging from shooting. For that we used ShotsFired event.
+        /// </summary>
         public event EventHandler ShotsFired;
 
+        // Just like compoistion, we use protected/private (NOT public)
+        // and call what we need from that component to the public.
+        // In this case we need properties, so we return properties from protected person.
+        // Person can contain a name, but we can easilly change that if needed.
         public string Name => Person.Name;
         public int Age => Person.Age;
         public float Weight => Person.Weight;
@@ -27,6 +43,11 @@ namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 
         private int _consequitiveShots;
 
+        /// <summary>
+        /// Randomiser. In order to test random behaviour, we need to be in control.
+        /// Chaotic randomisation is being out of control. So we use abstraction, to be
+        /// able to inject implementation of completely controllable random numbers generator.
+        /// </summary>
         private IRandom _random;
 
         public Soldier(Person person, float hp, float xp, IRandom random)
@@ -37,6 +58,10 @@ namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
             _random = random;
         }
 
+        /// <summary>
+        /// When soldier gets promoted, previous state of old soldier gets 
+        /// transfered to a new soldier. Thus the soldier in constructor.
+        /// </summary>
         public Soldier(Soldier soldier, float hp, float xp, IRandom random)
         {
             Person = soldier.Person;
@@ -47,12 +72,16 @@ namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 
         public void Shoot(IList<Soldier> soldiers)
         {
+            // 0 is not a magic number, refers to empty, nothing, default, dead, etc..
             var isDead = HP <= 0;
             if (isDead) return;
 
             Soldier target = PickRandomTarget(soldiers);
+            // Logging has been decoupled.
+            // Usign event instead, which is still part of shooting (still doing one thing).
             ShotsFired?.Invoke(this, new ShotFiredEventArgs(Name, target.Name));
 
+            // 100 is not a magic number, usually refers to 100%.
             var hitRoll = _random.Next(100);
             if (IsTargetHit(hitRoll))
             {
@@ -67,6 +96,7 @@ namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 
         private void DealDamage(Soldier target)
         {
+            // Magic nubmer, thus using named constant.
             const float damage = 50;
             var multiplier = GetDamageMultiplier();
 

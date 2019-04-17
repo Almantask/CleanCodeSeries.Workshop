@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CleanCodeSeries.Workshop.Lesson4.SOLID
 {
+    /// <summary>
+    /// SRP: Logger logs.
+    /// </summary>
     public interface ILogger
     {
         void Log(string message);

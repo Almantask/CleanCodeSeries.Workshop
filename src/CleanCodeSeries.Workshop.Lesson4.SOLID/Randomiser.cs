@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace CleanCodeSeries.Workshop.Lesson4.SOLID
 {
-    class Randomiser : IRandom
+    /// <summary>
+    /// Usual randomiser used for random choices. 
+    /// </summary>
+    public class Randomiser : IRandom
     {
         private Random _random = new Random();
         public int Next(int value)

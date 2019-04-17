@@ -10,6 +10,9 @@ using System;
 
 namespace CleanCodeSeries.Workshop.Lesson4.EasyOOP
 {
+    /// <summary>
+    /// Highest ranking soldier.
+    /// </summary>
     public class Commander:Soldier
     {
         public Commander(Soldier soldier, IRandom random) : base(soldier, soldier.HP, soldier.XP, random) { }

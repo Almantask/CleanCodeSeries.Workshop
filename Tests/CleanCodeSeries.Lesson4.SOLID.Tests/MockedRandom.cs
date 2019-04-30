@@ -1,9 +1,5 @@
-﻿using CleanCodeSeries.Workshop.Lesson3.EasyOOP;
+﻿using CleanCodeSeries.Workshop.Lesson4.EasyOOP;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanCodeSeries.Lesson4.SOLID.Tests
 {

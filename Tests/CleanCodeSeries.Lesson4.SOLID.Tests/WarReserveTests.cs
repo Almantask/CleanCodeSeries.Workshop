@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CleanCodeSeries.Workshop.Lesson3.EasyOOP;
+using CleanCodeSeries.Workshop.Lesson4.EasyOOP;
 using CleanCodeSeries.Workshop.Lesson4.SOLID;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

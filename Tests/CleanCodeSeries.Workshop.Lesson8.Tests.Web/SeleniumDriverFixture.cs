@@ -10,7 +10,6 @@ namespace SeleniumTests.Tests
     // Initialize and reuse heavy components across the test suite.
     public class SeleniumDriverFixture:IDisposable
     {
-
         public IWebDriver Driver { get; }
         public string homeUrl = $"http://localhost:{DummyAppTest.Port}";
         public string aboutPageUrl = $"http://localhost:{DummyAppTest.Port}/Home/Contact";

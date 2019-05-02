@@ -27,9 +27,10 @@ namespace CleanCodeSeries.Workshop.Lesson8.Tests.Desktop
             var result = _driver.FindElementByAccessibilityId("TextBoxResult");
 
             Assert.Equal("3", result.Text);
+            Thread.Sleep(2000);
 
             _driver.FindElementByName("C").Click();
-            Assert.Equal("", result.Text);
+            
         }
     }
 }

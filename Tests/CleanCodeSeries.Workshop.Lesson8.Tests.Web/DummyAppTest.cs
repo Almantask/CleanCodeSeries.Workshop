@@ -53,14 +53,14 @@ namespace SeleniumTests.Tests
 
             var textBox = _driver.FindElement(By.Id("YourNameText"));
             const string name = "Almantas";
-            await SimulateTyping(name, textBox, 500);
+            await SimulateTyping(name, textBox, 1);
 
             var testButton = _driver.FindElement(By.Id("TestButton"));
             testButton.Click();
 
             var alertText = GetAlertText();
             textBox.Clear();
-            Assert.Equal("Almantas", alertText);
+            Assert.Equal("Almanta", alertText);
         }
 
         private string GetAlertText()

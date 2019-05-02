@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodeSeries.Workshop.Le
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodeSeries.Workshop.Lesson8.DummyApp.Desk", "src\CleanCodeSeries.Workshop.Lesson8.DummyApp.Desktop\CleanCodeSeries.Workshop.Lesson8.DummyApp.Desk\CleanCodeSeries.Workshop.Lesson8.DummyApp.Desk.csproj", "{E2ADEDF3-204D-4FF5-AA02-AF138DD972EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingMock", "Testin\TestingMock\TestingMock.csproj", "{C3617A0D-48FC-48A6-87FE-B379B87AC22D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{E2ADEDF3-204D-4FF5-AA02-AF138DD972EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2ADEDF3-204D-4FF5-AA02-AF138DD972EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2ADEDF3-204D-4FF5-AA02-AF138DD972EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3617A0D-48FC-48A6-87FE-B379B87AC22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3617A0D-48FC-48A6-87FE-B379B87AC22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3617A0D-48FC-48A6-87FE-B379B87AC22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3617A0D-48FC-48A6-87FE-B379B87AC22D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{771F2BCA-AF51-4BAD-B193-FC6A75360AB6} = {EDE6497B-4B6B-427A-A653-A39C9D99EFC1}
 		{A1724A01-90CF-4C51-9D21-69FF8F2717BB} = {EDE6497B-4B6B-427A-A653-A39C9D99EFC1}
 		{2749A521-6C08-4116-BF64-8E18178E8404} = {EDE6497B-4B6B-427A-A653-A39C9D99EFC1}
+		{C3617A0D-48FC-48A6-87FE-B379B87AC22D} = {EDE6497B-4B6B-427A-A653-A39C9D99EFC1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {347FC905-3302-49DD-A181-0B9834DDC389}

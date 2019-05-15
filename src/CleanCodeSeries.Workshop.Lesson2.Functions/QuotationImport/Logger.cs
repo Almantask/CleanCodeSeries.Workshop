@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanCodeSeries.Workshop.Lesson2.Functions.QuotationImport
+namespace CleanCodeSeries.Workshop.Lesson2.Functions.EventHandlers
 {
     internal class Logger
     {

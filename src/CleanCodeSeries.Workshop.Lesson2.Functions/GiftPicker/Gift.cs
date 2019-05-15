@@ -1,4 +1,4 @@
-﻿namespace CleanCodeSeries.Workshop.Lesson2.Functions.GiftPicker
+﻿namespace CleanCodeSeries.Workshop.Lesson2.Functions.Big
 {
     public class Gift
     {

@@ -8,7 +8,7 @@ namespace SeleniumTests.Tests
     public class ApiumDriverFixture : IDisposable
     {
         private const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723";
-        private string pathToAppUnderTest = $@"C:\Users\pc\source\repos\CleanCodeSeries.Workshop\src\CleanCodeSeries.Workshop.Lesson8.DummyApp.Desktop\CleanCodeSeries.Workshop.Lesson8.DummyApp.Desk\bin\Debug\CleanCodeSeries.Workshop.Lesson8.DummyApp.Desk.exe";
+        private string pathToAppUnderTest = $@"C:\CleanCodeSeries.Workshop\src\CleanCodeSeries.Workshop.Lesson8.DummyApp.Desktop\CleanCodeSeries.Workshop.Lesson8.DummyApp.Desk\bin\Debug\CleanCodeSeries.Workshop.Lesson8.DummyApp.Desk.exe";
         public WindowsDriver<WindowsElement> Driver;
 
         public ApiumDriverFixture()

@@ -2,10 +2,10 @@
 {
     class Zombie
     {
-        // Head
-        private readonly Brains _brains;
-
         private Vector3 _location;
+
+        internal Brains Brains { get; }
+
         // Here it seeks for brains, not head!!!
         public void Seek(Brains brains)
         {

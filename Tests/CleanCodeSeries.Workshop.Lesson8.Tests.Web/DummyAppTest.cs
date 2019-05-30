@@ -53,7 +53,7 @@ namespace SeleniumTests.Tests
 
             var textBox = _driver.FindElement(By.Id("YourNameText"));
             const string name = "Almantas";
-            await SimulateTyping(name, textBox, 500);
+            await SimulateTyping(name, textBox, 0);
 
             var testButton = _driver.FindElement(By.Id("TestButton"));
             testButton.Click();
@@ -78,9 +78,7 @@ namespace SeleniumTests.Tests
             foreach (var letter in word)
             {
                 await Task.Run(() => Thread.Sleep(waitTimeMs));
-                element.Clear();
-                sb.Append(letter);
-                element.SendKeys(sb.ToString());
+                element.SendKeys(letter.ToString());
             }
         }
     }

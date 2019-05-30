@@ -10,11 +10,6 @@ namespace CleanCodeSeries.Workshop.Lesson8.BDD
         private string _result;
         private readonly Greeter _greeter = new Greeter();
 
-         // _greeter.Language = Language.EN;
-         // _result = _greeter.Greet(name);
-         // Assert.Equal(greet, _result);
-
-
         [Given(@"I have selected a language EN,")]
         public void GivenIHaveSelectedALanguageEN()
         {

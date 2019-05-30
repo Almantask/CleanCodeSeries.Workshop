@@ -22,8 +22,6 @@ namespace CleanCodeSeries.Lesson4.SOLID.Tests
 
             var targets = new List<Soldier>() { soldier2 };
 
-            const float damage = 50;
-
             soldier.Shoot(targets);
             soldier2.HP.Should().Be(50);
         }
@@ -38,8 +36,6 @@ namespace CleanCodeSeries.Lesson4.SOLID.Tests
             var soldier2 = new Soldier(person, 100, 10, random);
 
             var targets = new List<Soldier>() { soldier2 };
-
-            const float damage = 50;
             var initialHp = soldier2.HP;
             soldier.Shoot(targets);
             soldier2.HP.Should().Be(initialHp);

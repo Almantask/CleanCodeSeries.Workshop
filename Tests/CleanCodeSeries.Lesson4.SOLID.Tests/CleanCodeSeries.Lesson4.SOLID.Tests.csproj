@@ -83,7 +83,6 @@
     <Compile Include="MockedRandom.cs" />
     <Compile Include="SoldierTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WarReserveTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
